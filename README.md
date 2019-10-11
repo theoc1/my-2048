@@ -1,5 +1,18 @@
 # my-2048
 
+**Pet Project. Just for research purposes. Not for production.**
+
+Classic 2048 game made with Vue. 
+
+Original 2048 [here](https://github.com/gabrielecirulli/2048/).
+
+## TODO
+
+- pretty transitions
+- count score and best score
+- save state of game
+- make cool game ending
+
 ## Project setup
 ```
 npm install
@@ -19,6 +32,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -29,8 +29,6 @@ export default {
       const keys = ['ArrowUp', 'ArrowRight', 'ArrowLeft', 'ArrowDown'];
 
       if (!keys.includes(event.key)) return;
-      // eslint-disable-next-line
-      console.log(event.key);
 
       const result = calculate(this.grid, event.key);
 

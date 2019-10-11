@@ -1,6 +1,6 @@
 <template>
   <div class="item" :style="itemStyle">
-    {{ item }}
+    <div v-if="item !== 0">{{ item }}</div>
   </div>
 </template>
 
@@ -16,7 +16,11 @@ export default {
 
   computed: {
     itemStyle() {
-      return { 'background-color': colorPicker(this.item) };
+      const { color, bgColor } = colorPicker(this.item);
+      return {
+        color,
+        'background-color': bgColor,
+      };
     },
   }
 }
