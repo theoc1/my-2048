@@ -5,7 +5,7 @@
     </div>
 
     <div class="item">
-      <GameInfo/>
+      <GameInfo :reset="resetGameHandler"/>
     </div>
 
     <div class="item" :style="{ flex: 1 }">
@@ -31,6 +31,12 @@ export default {
     GameGrid,
     GameBottom,
   },
+
+  methods: {
+    resetGameHandler() {
+      this.$emit('reset-game');
+    }
+  }
 }
 </script>
 

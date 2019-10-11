@@ -60,6 +60,7 @@ export default {
   },
 
   beforeMount() {
+    this.$parent.$on('reset-game', () => this.reset());
     this.reset();
   },
 

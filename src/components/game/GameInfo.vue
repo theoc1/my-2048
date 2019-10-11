@@ -12,14 +12,19 @@
     
 
     <div class="control-buttons">
-      <button class="button">New game</button>
+      <button class="button" @click="reset">New game</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  props: {
+    reset: { 
+      type: Function,
+      required: true,
+    },
+  },
 }
 </script>
 
