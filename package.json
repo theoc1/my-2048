@@ -29,7 +29,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "for-direction": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

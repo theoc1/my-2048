@@ -10,6 +10,8 @@
 
 <script>
 import GridItem from './GridItem';
+// eslint-disable-next-line
+import { collapseRow, calculate } from '../../../lib/game';
 
 export default {
   components: {
@@ -18,23 +20,57 @@ export default {
 
   data() {
     return {
-      grid: [
-        [1, 2048, 3, 4],
-        [5, 6, 7, 8],
-        [9, 10, 11456, 12],
-        [13, 14, 15, 16],
-      ],
+      grid: [],
     }
   },
 
   methods: {
+    keydownHandler(event) {
+      const keys = ['ArrowUp', 'ArrowRight', 'ArrowLeft', 'ArrowDown'];
+
+      if (!keys.includes(event.key)) return;
+      // eslint-disable-next-line
+      console.log(event.key);
+
+      const result = calculate(this.grid, event.key);
+
+      if (result === 'eog') {
+        window.alert('End of game');
+        this.reset();
+        return;
+      }
+      
+      this.$set(this, 'grid', result);
+    },
+
+    reset() {
+      this.$set(this, 'grid', [
+        [2, 8, 2, 0],
+        [0, 0, 0, 4],
+        [0, 0, 2, 0],
+        [0, 2, 0, 0],
+      ]);
+    },
+
     getItemStyle(i, j) {
       return {
         'grid-row': `${i + 1} / ${i + 2}`,
         'grid-column': `${j + 1} / ${j + 2}`,
-        padding: '2px',
+        'padding': '2px',
       };
     },
+  },
+
+  beforeMount() {
+    this.reset();
+  },
+
+  created() {
+    window.addEventListener('keydown', this.keydownHandler);
+  },
+
+  destroyed() {
+    window.removeEventListener('keydown', this.keydownHandler);
   },
 
   computed: {
