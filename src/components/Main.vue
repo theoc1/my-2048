@@ -1,12 +1,20 @@
 <template>
-  <div>
-    <GameTitle/>
+  <div class="main-container">
+    <div class="item">
+      <GameTitle/>
+    </div>
 
-    <GameInfo/>
+    <div class="item">
+      <GameInfo/>
+    </div>
 
-    <GameGrid/>
+    <div class="item">
+      <GameGrid/>
+    </div>
 
-    <GameBottom/>
+    <div class="item">
+      <GameBottom/>
+    </div>
   </div>
 </template>
 
@@ -26,6 +34,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+}
 
 </style>
