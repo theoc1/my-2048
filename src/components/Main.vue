@@ -8,7 +8,7 @@
       <GameInfo/>
     </div>
 
-    <div class="item">
+    <div class="item" :style="{ flex: 1 }">
       <GameGrid/>
     </div>
 
@@ -21,7 +21,7 @@
 <script>
 import GameTitle from './game/GameTitle';
 import GameInfo from './game/GameInfo';
-import GameGrid from './game/GameGrid';
+import GameGrid from './game/grid/GameGrid';
 import GameBottom from './game/GameBottom';
 
 export default {
